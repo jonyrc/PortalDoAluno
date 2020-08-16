@@ -1,0 +1,33 @@
+{
+  "name": "portalapi",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node ./index.js",
+    "dev": "nodemon --exec babel-node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonyrc/portalAPI.git"
+  },
+  "author": "Jonathan Carvalho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonyrc/portalAPI/issues"
+  },
+  "homepage": "https://github.com/jonyrc/portalAPI#readme",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.12",
+    "nodemon": "^1.19.2"
+  }
+}
