@@ -1,0 +1,26 @@
+@import "ionic.theme.dark";
+<ion-header>
+  <ion-navbar>
+    <!--<button ion-button color="dark" menuToggle><ion-icon name="menu" color="primary"></ion-icon></button>-->
+    <ion-title>Notícias</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card *ngFor="let aviso of avisos">
+        <ion-card-header>
+          <ion-card-title>{{aviso.titulo}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            {{aviso.texto}}
+        </ion-card-content>
+        <ion-card-content>
+            Data da Publicação: {{aviso.dataPublicacao | date: 'dd/MM/yyyy'}}
+        </ion-card-content>
+      </ion-card>
+
+      <button ion-button block (click) ="logout()">Sair</button>
+
+</ion-content>

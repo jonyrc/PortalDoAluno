@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button color="light" menuToggle><ion-icon name="menu" color="primary"></ion-icon></button>
+    <ion-title>Horário</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngFor="let escala of escalas">
+
+      <ion-item-group *ngFor="let diaSemana of escala.diaSemana">
+          <ion-item-divider>
+            <ion-label>{{diaSemana.dia}}</ion-label>
+          </ion-item-divider>
+        
+          <ion-item *ngFor="let horarios of diaSemana.horarios">
+            <ion-label *ngIf="horarios.horario == 1">18:30: {{horarios.idDisciplina.titulo}}</ion-label>
+            <ion-label *ngIf="horarios.horario == 2">19:20: {{horarios.idDisciplina.titulo}}</ion-label>
+            <ion-label *ngIf="horarios.horario == 3">20:20: {{horarios.idDisciplina.titulo}}</ion-label>
+            <ion-label *ngIf="horarios.horario == 4">21:10: {{horarios.idDisciplina.titulo}}</ion-label>
+            
+          </ion-item>
+        </ion-item-group>
+
+
+  </div>
+           
+    
+
+</ion-content>

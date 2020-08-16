@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button color="light" menuToggle><ion-icon name="menu" color="primary"></ion-icon></button>
+    <ion-title>Financeiro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+<ion-grid style="font-size: 16px">
+
+    <ion-row justify-content-between style="border-style: groove; text-align: center">
+      <ion-col col-2>
+        Mês
+      </ion-col>
+      <ion-col col-3>
+        Valor
+      </ion-col>
+      <ion-col col-4>
+        Vencimento
+      </ion-col>
+      <ion-col col-3>
+        Status
+      </ion-col>
+    </ion-row>
+  
+    <ion-row justify-content-between style="border-style: groove; text-align: center"
+      *ngFor="let pagamento of parcelas">
+      <ion-col col-2>
+        {{pagamento.mesRef}}
+      </ion-col>
+      <ion-col col-3>
+        R${{pagamento.valor}}
+      </ion-col>
+      <ion-col col-4>
+        {{pagamento.vencimento | date: 'dd/MM/yy'}}
+      </ion-col>
+      <ion-col col-3>
+          <button *ngIf="pagamento.status == 0" ion-button (click)='alertPendente()' color="primary"><ion-icon name="information-circle"></ion-icon></button>
+          <button *ngIf="pagamento.status == 1" ion-button (click)='alertAtraso()' color="danger"><ion-icon name="clock"></ion-icon></button>
+          <button *ngIf="pagamento.status == 2" ion-button (click)='alertPago()' color="secondary"><ion-icon name="done-all"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+
+</ion-grid>
+</ion-content>

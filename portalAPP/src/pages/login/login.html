@@ -1,0 +1,31 @@
+@import "ionic.theme.dark";
+<ion-header>
+  <ion-navbar>
+    <ion-title>Acesse sua Conta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding text-center>
+
+    <img src="assets/imgs/graduation.png" block>
+
+  <form (ngSubmit)="login(); $event.preventDefault()"
+     class="form">
+
+      <ion-item>
+        <ion-label floating>Matrícula</ion-label>
+        <ion-input type="text" spellcheck="false" autocapitalize="off" #matricula></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input type="text" spellcheck="false" autocapitalize="off" #senha></ion-input>
+        </ion-item>    
+
+    <button ion-button block (click) ="getAll(matricula.value,senha.value)" >Entrar</button>
+
+  </form>
+
+
+</ion-content>
